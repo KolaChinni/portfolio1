@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ksnow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1248de4e6b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>KVSP Portfolio</title>
+</head>
+<body>
+    <div class="snowfall">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </div>
+    <!-------Header----------->
+    <header>
+        <div class="logo"><span></span>KVSP.</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#project"><i class="fa-solid fa-briefcase"></i> Work</a></li>
+                <li><a href="#"><i class="fa-solid fa-address-card"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-------Home----------->
+    <div id="home">
+        <div class="content">
+            <p>Hi,I'm Venkata Sai <span>Putrayya</span> Kola</p>
+            <br />
+            <p style="font-size: 30px"><span id="typed-text"></span></p>
+        </div>
+    </div>
+    <!--------About--------->
+    <div id="about">
+        <div class="aboutme">
+            <h3><span>About</span> me<h3>
+        </div>
+        <div class="data">
+            <br />
+            <div class="my-data">
+                <p>I am an undergraduate student specializing in Artificial Intelligence and Machine Learning, 
+                with a solid understanding of core machine learning concepts. 
+                I’m currently deepening my foundation in ML research and exploring real-world applications of AI. 
+                In addition to my work in ML, I have basic experience in web development and cyber security, 
+                which helps me approach problems from a broader technological perspective. I’m passionate about continuous 
+                learning and aim to contribute meaningfully to the AI and ML community.
+                </p>                
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div class="tab">
+                <p class="tab-links active-link" onclick="opentab('skill','s')" id="s">skill</p>
+                <p class="tab-links" onclick="opentab('education','e')" id="e">Education</p>
+                <p class="tab-links" onclick="opentab('certifications','c')" id="c">Certifications</p>
+                <p class="tab-links" onclick="opentab('achievements','a')" id="a">Achievements</p>
+            </div>
+            <br>
+            <br>
+            <div class="description-contents">
+                <div class="tab-contents active-tab" id="skill">
+                    <ul>
+                        <li>Machine Learning Researcher</li>
+                        <li>Tensorflow and scikit-learn</li>
+                        <li>Programming Languages(C,C++,Python,HTML,CSS,JavaScript,R,Java)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li>Btech in Artificial Intelligence and Machine Learning</li>
+                        <li>MPC</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certifications">
+                    <ul>
+                        <li>Crash course on python by Google</li>
+                        <li>Machine Learning Specilization by deepLearning</li>
+                        <li>Deep Learning Specialization by deeplearning</li>
+                        <li>pyhton,sql,ProbelSolving basics certification by Hackerrank</li>
+                    </ul>
+                </div>
+                <div class="tab-contents active-tab" id="achievements">
+                    <ul>
+                        <li>Intern at Supraja Technologies</li>
+                    </ul>
+                </div>            
+            </div>
+        </div>
+
+        <div class="certi-section">
+            <h2><span>Certificate</span> Gallery</h2>
+            <div class="certi-wrap">
+                <img src="images/back.png" id="backBtn" alt="Back">
+                <div class="certi" id="imageScroller">
+                    <span><img src="images/image-1.png" alt="Certificate 1"></span>
+                    <span><img src="images/image-2.png" alt="Certificate 2"></span>
+                    <span><img src="images/image-3.png" alt="Certificate 3"></span>
+                    <span><img src="images/image-4.png" alt="Certificate 4"></span>
+                    <span><img src="images/image-5.png" alt="Certificate 5"></span>
+                    <span><img src="images/image-6.png" alt="Certificate 6"></span>
+                    <span><img src="images/image-7.png" alt="Certificate 7"></span>
+                    <span><img src="images/image-8.png" alt="Certificate 8"></span>
+                    <span><img src="images/image-9.png" alt="Certificate 9"></span>
+                    <span><img src="images/image-10.png" alt="Certificate 10"></span>
+                    <span><img src="images/image-11.png" alt="Certificate 11"></span>
+                    <span><img src="images/image-12.png" alt="Certificate 12"></span>
+                    <span><img src="images/image-13.png" alt="Certificate 13"></span>
+                    <span><img src="images/image-14.png" alt="Certificate 14"></span>                    
+                </div>
+                <img src="images/next.png" id="nextBtn" alt="Next">
+            </div>
+        </div>
+    </div>
+    <!----------projects--------------->
+    <div id="project">
+        <div class="project-wrap">
+            <img src="images/back.png" id="PbackBtn" alt="Back">
+            <div class="container" id="projectScroller">
+                <div class="project-slide">
+                    <div class="project-image">
+                       <img src="images/image-1.png" alt="Certificate 1"> 
+                    </div>
+                    <br />
+                    <div class="project-description">
+                    <h2 style="color: snow;">Fetal-health prediction</h2>
+                    <br />
+                    <p>A neural network-based model that predicts fetal health 
+                        (normal, suspect, pathological) using cardiotocography (CTG) data. 
+                        It aids in early detection of
+                         fetal distress for better clinical decision-making.</p> 
+                    </div>
+
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="images/image-1.png" alt="Certificate 1">
+                    </div>
+                    <div class="project-description"></div>
+                    <p>Machine</p>
+
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                       <img src="images/image-1.png" alt="Certificate 1"> 
+                    </div>
+                    
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="images/image-1.png" alt="Certificate 1">
+                    </div>     
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="images/image-1.png" alt="Certificate 1">
+                    </div>    
+                </div>   
+            </div>
+            <img src="images/next.png" id="PnextBtn" alt="Next">
+        </div>
+    </div>
+<script src="ksnow.js">
+</script>
+</body>
