@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ksnow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1248de4e6b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>KVSP Portfolio</title>
+</head>
+<body>
+    <video class="pc-video" autoplay muted loop>
+        <source src="other-images\background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+  </video> 
+    <div class="snowfall">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </div>
+    <!-------Header----------->
+    <header>
+        <div class="logo"><span></span><span>K</span>VSP.</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#project"><i class="fa-solid fa-briefcase"></i> Work</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-card"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-------Home----------->
+    <div id="home">
+        <div class="content">
+            <p>Hi,I'm Venkata Sai <span>Putrayya</span> Kola</p>
+            <br />
+            <p style="font-size: 30px"><span id="typed-text"></span></p>
+        </div>
+        <div class="myphoto">
+            <img src="other-images\myimage.jpg" alt="kvsp">
+        </div>
+    </div>
+    <!--------About--------->
+    <div id="about">
+        <div class="aboutme">
+            <h3><span>About</span> me<h3>
+        </div>
+        <div class="data">
+            <br />
+            <div class="my-data">
+                <p>I am an undergraduate student specializing in Artificial Intelligence and Machine Learning, 
+                with a solid understanding of core machine learning concepts. 
+                I’m currently deepening my foundation in ML research and exploring real-world applications of AI. 
+                </p>
+                <p>
+                    In addition to my work in ML, I have basic experience in web development and cyber security, 
+                which helps me approach problems from a broader technological perspective. I’m passionate about continuous 
+                learning and aim to contribute meaningfully to the AI and ML community.
+                </p>                
+            </div>
+            <br />
+
+            <br />
+            <div class="tab">
+                <p class="tab-links active-link" onclick="opentab('skill','s')" id="s">skill</p>
+                <p class="tab-links" onclick="opentab('education','e')" id="e">Education</p>
+                <!--<p class="tab-links" onclick="opentab('certifications','c')" id="c">Certifications</p>-->
+                <p class="tab-links" onclick="opentab('achievements','a')" id="a">Achievements</p>
+            </div>
+            <br>
+            <br>
+            <div class="description-contents">
+                <div class="tab-contents active-tab" id="skill">
+                    <ul>
+                        <li>Machine Learning Researcher</li>
+                        <li>Tensorflow and scikit-learn</li>
+                        <li>Programming Languages(C,C++,Python,HTML,CSS,JavaScript,R,Java)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li>Btech in Artificial Intelligence and Machine Learning</li>
+                        <li>MPC</li>
+                    </ul>
+                </div>
+<!--                <div class="tab-contents" id="certifications">
+                    <ul>
+                        <li>Crash course on python by Google</li>
+                        <li>Machine Learning Specilization by deepLearning</li>
+                        <li>Deep Learning Specialization by deeplearning</li>
+                        <li>pyhton,sql,ProbelSolving basics certification by Hackerrank</li>
+                    </ul>
+                </div> -->
+                <div class="tab-contents active-tab" id="achievements">
+                    <ul>
+                        <li>Intern at Supraja Technologies</li>
+                    </ul>
+                </div>            
+            </div>
+        </div>
+
+        <div class="certi-section">
+            <h2><span>Certificate</span> Gallery</h2>
+            <div class="certi-wrap">
+                <img src="other-images/back-button.png" id="backBtn" alt="Back">
+                <div class="certi" id="imageScroller">
+                    <span><img src="certi-images/image-1.png" alt="Certificate 1"></span>
+                    <span><img src="certi-images/image-2.png" alt="Certificate 2"></span>
+                    <span><img src="certi-images/image-3.png" alt="Certificate 3"></span>
+                    <span><img src="certi-images/image-4.png" alt="Certificate 4"></span>
+                    <span><img src="certi-images/image-5.png" alt="Certificate 5"></span>
+                    <span><img src="certi-images/image-6.png" alt="Certificate 6"></span>
+                    <span><img src="certi-images/image-7.png" alt="Certificate 7"></span>
+                    <span><img src="certi-images/image-8.png" alt="Certificate 8"></span>
+                    <span><img src="certiimages/image-9.png" alt="Certificate 9"></span>
+                    <span><img src="certi-images/image-10.png" alt="Certificate 10"></span>
+                    <span><img src="certi-images/image-11.png" alt="Certificate 11"></span>
+                    <span><img src="certi-images/image-12.png" alt="Certificate 12"></span>
+                    <span><img src="certi-images/image-13.png" alt="Certificate 13"></span>
+                    <span><img src="certi-images/image-14.png" alt="Certificate 14"></span>                    
+                </div>
+                <img src="other-images/next-button.png" id="nextBtn" alt="Next">
+            </div>
+        </div>
+    </div>
+    <!----------projects--------------->
+    <div id="project">
+        <h1 class="ph1">My <span>Projects</span></h1>
+        <div class="project-wrap">
+            <img src="other-images/back-button.png" id="PbackBtn" alt="Back">
+            <div class="container" id="projectScroller">
+                <div class="project-slide">
+                    <div class="project-image">
+                       <img src="project-images\fetalProject.jpeg" alt="Certificate 1"> 
+                    </div>
+                    <br />
+                    <div class="project-description">
+                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
+                        <br />
+                        <p class="pp">A neural network-based model that predicts fetal health 
+                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
+                            It aids in early detection of
+                            fetal distress for better clinical decision-making.</p>
+                            <br>
+                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
+                        target="_blank" 
+                        class="project-button">View</a>
+                    </div>
+
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="project-images\simplelinearregression.png" alt="Certificate 1">
+                    </div>
+                    <div class="project-description">
+                        <h2 style="color: #00FFFF;">Simple Linear Regression</h2>
+                        <br />
+                        <p class="pp">An interactive web app that visually demonstrates
+                             multiple types of linear regression techniques for a 
+                             single-variable dataset, aiding understanding through real-time 
+                             plots.</p>
+                             <p class="pp"><span style="color: yellow; font-family: poppins;font-weight: bolder;">Algortims</span> OLS,GradientDescent,Ridge,Lasso,Elasticnet,
+                                DecisionTree,RandomForest,etc..</p>
+                            <br>
+                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
+                        target="_blank" 
+                        class="project-button">View</a>
+                    </div>
+
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                       <img src="project-images\multiplelinearregression.png" alt="Certificate 1"> 
+                    </div>
+                    <div class="project-description">
+                        <h2 style="color: #00FFFF;">Multiple Linear Regression</h2>
+                        <br />
+                        <p class="pp">An interactive app that visualizes and compares multiple linear 
+                            regression techniques on multi-feature datasets. Helps users understand 
+                            model behavior, 
+                            coefficients, and error metrics in real-time.</p>
+                        <p class="pp"><span style="color: yellow; font-family: poppins;font-weight: bolder;">Algortims</span> OLS,GradientDescent,Ridge,Lasso,Elasticnet,
+                        DecisionTree,RandomForest,etc..</p>
+                            <br>
+                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
+                        target="_blank" 
+                        class="project-button">View</a>
+                    </div>
+                    
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="images/image-1.png" alt="Certificate 1">
+                    </div>     
+                    <div class="project-description">
+                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
+                        <br />
+                        <p class="pp">A neural network-based model that predicts fetal health 
+                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
+                            It aids in early detection of
+                            fetal distress for better clinical decision-making.</p>
+                            <br>
+                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
+                        target="_blank" 
+                        class="project-button">View</a>
+                    </div>
+                </div>
+                <div class="project-slide">
+                    <div class="project-image">
+                        <img src="images/image-1.png" alt="Certificate 1">
+                    </div>
+                    <div class="project-description">
+                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
+                        <br />
+                        <p class="pp">A neural network-based model that predicts fetal health 
+                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
+                            It aids in early detection of
+                            fetal distress for better clinical decision-making.</p>
+                            <br>
+                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
+                        target="_blank" 
+                        class="project-button">View</a>
+                    </div>  
+                </div>   
+            </div>
+            <img src="other-images/next-button.png" id="PnextBtn" alt="Next">
+        </div>
+    </div>
+    <div id="contact">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="ch1">
+                    <span>Contact</span> Me
+                </h1>
+                <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>123456890</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kola-venkata-sai-putrayya-7spvsbbs/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                    <a href="VENKATA SAI PUTRAYYA KOLA-1.docx" class="cvbutton" download>Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
+                    <button type="submit" id="submit-btn" class="animated-submit">
+                        <span class="btn-text">Send</span>
+                        <span class="spinner"></span>
+                        <span class="checkmark">&#10003;</span>
+                    </button>
+
+                </form>
+            </div>        
+        </div>
+    </div>
+<script src="ksnow.js">
+</script>
+</body>
