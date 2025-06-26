@@ -17,7 +17,7 @@ body::-webkit-scrollbar {        /* Chrome, Edge, Safari */
 html{
     scroll-behavior: smooth;
     overflow-x: clip;
-    
+    overflow-y: scroll;
 }
 span{
     color: #00FFFF;
