@@ -9,15 +9,28 @@ body{
     background:black;
     color: white;
     position: relative;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {        /* Chrome, Edge, Safari */
   display: none;
 }
 html{
     scroll-behavior: smooth;
-    overflow-x: clip;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    height : 100%;
+}
+html, body {/*------------------------------------*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+/* Instead of scroll-behavior: smooth on html */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 span{
     color: #00FFFF;
@@ -31,6 +44,10 @@ span{
   object-fit: cover;
   overflow: hidden;
   z-index: -1;
+  transform: translateZ(0);/*----*/
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 }
 /* Container for your photo */
 .myphoto {
@@ -102,6 +119,8 @@ header{
     display: flex;
     justify-content: space-between;
     z-index: 1002;
+    transform: translateZ(0);/*--------*/
+    will-change: transform;/*----*/
 }
 .hamburger{
     display: none;
