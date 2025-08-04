@@ -617,7 +617,7 @@ nav:has(a:hover) a:not(:hover){
   flex-direction: column;
 }
 .ph1{
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: 5vh;
     place-items: center;
     height: 50px;
     margin-top: 4%;
