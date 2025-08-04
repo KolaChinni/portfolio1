@@ -601,8 +601,10 @@ nav:has(a:hover) a:not(:hover){
 
 
 
+
 /*-----projects------*/
 /* Main project area */
+/*-----projects------*/
 #project {
   background: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
@@ -772,8 +774,6 @@ nav:has(a:hover) a:not(:hover){
     padding: 20px;
   }
 }
-
-
 
 /*----------Contact--------------*/
 #contact {
@@ -965,7 +965,3 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
-
-
-
-
