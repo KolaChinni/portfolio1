@@ -215,7 +215,7 @@ nav ul li a:hover::after{
         align-items: center;
         padding-top: 60px;
         z-index: 1000;
-        background-color: black;
+        background-color: 0B0C2A;
     }
     nav#nav-menu.active {
         right: 0;
@@ -606,7 +606,7 @@ nav:has(a:hover) a:not(:hover){
 /* Main project area */
 #project {
   background: rgba(0, 0, 0, 0.4);
-  min-height: 100vh;
+  min-height: auto;
   width: 100%;
   padding: 5vh 5vw;
   text-align: center;
@@ -647,21 +647,23 @@ nav:has(a:hover) a:not(:hover){
 
 /* Each project card */
 .project-slide {
-  flex: 0 0 100%; /* 💡 full width of container */
-  scroll-snap-align: start;
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px; /* Optional max width to avoid huge cards on wide screens */
+  padding: 10px;
   box-sizing: border-box;
-  padding: 20px;
   border: 5px solid grey;
   border-radius: 10px;
+  scroll-snap-align: start;
   transition: transform 0.3s ease-in-out;
+  flex: 0 0 auto; /* Let flex shrink and grow */
 }
+
 
 /* Image styles */
 .project-image img {
   width: 100%;
   border-radius: 8px;
-  height: 180px;
+  height: 140px;
   object-fit: cover;
 }
 .project-description {
@@ -939,4 +941,5 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
 
