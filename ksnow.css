@@ -607,6 +607,7 @@ nav:has(a:hover) a:not(:hover){
 /* Main project area */
 /*-----projects------*/
 /* Main project area */
+/* ===== Main Project Area ===== */
 #project {
   background: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
@@ -640,32 +641,32 @@ nav:has(a:hover) a:not(:hover){
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
+  width: 100vw;
   padding: 0 10px;
   box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  max-width: 100%;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
 .container::-webkit-scrollbar {
-  display: none;
+  display: none; /* Safari and Chrome */
 }
 
 .project-slide {
-  flex: 0 0 auto;
+  flex: 0 0 90vw;        /* Slide width is 90% of viewport width */
+  max-width: 400px;      /* Max width on larger devices */
   scroll-snap-align: center;
-  box-sizing: border-box;
-  margin: 10px;
+  margin: 0 10px;
   padding: 20px;
   border: 3px solid #00ffff;
   border-radius: 15px;
   background-color: #121212;
   box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
-  width: 100%;
-  max-width: 350px;
+  box-sizing: border-box;
   overflow-wrap: break-word;
   word-break: break-word;
+  flex-shrink: 0;
 }
 
 .project-image img {
@@ -729,47 +730,48 @@ nav:has(a:hover) a:not(:hover){
   filter: drop-shadow(0 0 6px #0077ff);
 }
 
-/* === Responsive Breakpoints === */
+/* ===== Responsive Breakpoints ===== */
 
 /* Extra small devices (up to 360px) */
 @media (max-width: 360px) {
   .project-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    margin: 0;
-    padding: 15px 20px;
+    flex: 0 0 95vw;
+    max-width: 95vw;
+    margin: 0 5px;
+    padding: 15px 10px;
   }
 }
 
 /* Small devices (361px to 480px) */
 @media (min-width: 361px) and (max-width: 480px) {
   .project-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
+    flex: 0 0 92vw;
+    max-width: 92vw;
+    margin: 0 8px;
+    padding: 18px 12px;
   }
 }
 
-/* Medium devices (tablet) */
+/* Medium devices (tablet, 481px to 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
   .project-slide {
     flex: 0 0 80vw;
-    max-width: 80vw;
+    max-width: 350px;
+    margin: 0 12px;
   }
 }
 
-/* Large devices (desktop and up) */
+/* Large devices (desktop 768px and up) */
 @media (min-width: 768px) {
   .container {
-    scroll-snap-type: none;
+    scroll-snap-type: none; /* optional: disable snap on large screens */
     justify-content: flex-start;
   }
-
   .project-slide {
     flex: 0 0 auto;
     width: 300px;
     max-width: 350px;
+    margin: 0 15px;
   }
 }
 
@@ -963,3 +965,4 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
