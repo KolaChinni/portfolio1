@@ -43,7 +43,7 @@ backSpeed: 30,
 backDelay: 1500,
 loop: true
 });
-/*----------certificate galleryt--------------*/
+/*----------certificate galleryt--------------
 const scrollContainer = document.getElementById("imageScroller");
 const backBtn = document.getElementById("backBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -59,7 +59,7 @@ nextBtn.addEventListener("click", () => {
 
 backBtn.addEventListener("click", () => {
     scrollContainer.scrollLeft -= 300;
-});
+});*/
 /*------------about me------------*/
 
 var tablinks=document.getElementsByClassName('tab-links');
@@ -79,10 +79,12 @@ function opentab(tab,ids){
 /*-----------projects section--------------*/
 
 let projIndex = 0;
-const slider = document.getElementById("projectSlider");
+const slider = document.getElementById("projectScroller");
 
 function slideProjects(dir) {
-    const card = slider.querySelector(".project-card");
+    const card = slider.querySelector(".project-slide");
+    if (!card) return; // guard
+
     const cardWidth = card.offsetWidth + 20; // includes margin
     const totalCards = slider.children.length;
 
@@ -95,11 +97,12 @@ function slideProjects(dir) {
 
     slider.style.transform = `translateX(-${projIndex * cardWidth}px)`;
 }
+
 const scroll = document.getElementById("projectScroller");
 const PbackBtn = document.getElementById("PbackBtn");
 const PnextBtn = document.getElementById("PnextBtn");
 
-scrollContainer.addEventListener("wheel", (evt) => {
+scroll.addEventListener("wheel", (evt) => {
     evt.preventDefault();
     scroll.scrollLeft += evt.deltaY;
 });
@@ -111,6 +114,7 @@ PnextBtn.addEventListener("click", () => {
 PbackBtn.addEventListener("click", () => {
     scroll.scrollLeft -= 300;
 });
+
 /*----------contact form------------*/
 
 
@@ -144,3 +148,6 @@ form.addEventListener("submit", function (e) {
       alert("Submission failed. Please try again.");
     });
 });
+
+
+
