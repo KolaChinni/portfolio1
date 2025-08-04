@@ -797,6 +797,7 @@ nav:has(a:hover) a:not(:hover){
     padding: 20px;
   }
 }
+
 /*----------Contact--------------*/
 #contact {
   background: rgba(0, 0, 0, 0.4);
@@ -987,4 +988,3 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
-
