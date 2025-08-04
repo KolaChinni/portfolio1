@@ -601,10 +601,12 @@ nav:has(a:hover) a:not(:hover){
 
 
 
-
 /*-----projects------*/
 /* Main project area */
 /*-----projects------*/
+/* Main project area */
+/*-----projects------*/
+/* Main project area */
 #project {
   background: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
@@ -613,16 +615,17 @@ nav:has(a:hover) a:not(:hover){
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   flex-direction: column;
+  box-sizing: border-box;
 }
-.ph1{
-    font-size: 5vh;
-    place-items: center;
-    height: 50px;
-    margin-top: 4%;
-    margin-bottom: 6%;
+
+.ph1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  margin: 4% 0 6%;
+  padding: 0 10px;
 }
+
 .project-wrap {
   width: 100%;
   overflow: hidden;
@@ -642,39 +645,27 @@ nav:has(a:hover) a:not(:hover){
   box-sizing: border-box;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  max-width: 100%;
 }
+
 .container::-webkit-scrollbar {
   display: none;
 }
 
 .project-slide {
   flex: 0 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 10px;
   padding: 20px;
   border: 3px solid #00ffff;
   border-radius: 15px;
   background-color: #121212;
   box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
-  width: calc(100% - 40px); /* Mobile default */
-}
-
-@media (min-width: 481px) {
-  .project-slide {
-    width: calc(50% - 40px); /* 2 slides visible on tablets */
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    scroll-snap-type: none;
-  }
-
-  .project-slide {
-    width: 300px;
-    margin: 0 15px;
-  }
+  width: 100%;
+  max-width: 350px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .project-image img {
@@ -688,14 +679,18 @@ nav:has(a:hover) a:not(:hover){
 .project-description {
   padding: 10px 5px;
   color: #e0f7f7;
-  text-align: left;
   font-family: 'Poppins', sans-serif;
-  line-height: 1.4;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.5;
+  text-align: left;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .project-description a {
   text-decoration: none;
+  color: inherit;
 }
 
 .project-button {
@@ -728,85 +723,53 @@ nav:has(a:hover) a:not(:hover){
   filter: drop-shadow(0 0 2px #00ffff);
   transition: filter 0.3s ease-in-out;
 }
+
 #PbackBtn:hover,
 #PnextBtn:hover {
   filter: drop-shadow(0 0 6px #0077ff);
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0; /* No side padding */
-  }
+/* === Responsive Breakpoints === */
 
+/* Extra small devices (up to 360px) */
+@media (max-width: 360px) {
   .project-slide {
-    flex: 0 0 100vw;
-    width: 100vw;
-    min-width: 100vw;
-    max-width: 100vw;
+    flex: 0 0 100%;
+    width: 100%;
     margin: 0;
-    padding: 20px;
-    border-width: 2px;
-    scroll-snap-align: center;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-
-  .project-description {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-
-  .ph1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    height: auto; /* Remove fixed height to prevent clipping */
-  }
-
-  .project-button {
-    font-size: 0.95rem;
-    padding: 0.6rem;
-  }
-
-  #PbackBtn,
-  #PnextBtn {
-    width: 30px;
-    height: 30px;
+    padding: 15px 20px;
   }
 }
 
-
+/* Small devices (361px to 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .project-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+}
 
 /* Medium devices (tablet) */
 @media (min-width: 481px) and (max-width: 767px) {
   .project-slide {
-    flex: 0 0 auto;
-    width: 320px;
-    margin: 0 15px;
-    padding: 18px;
-  }
-
-  .container {
-    justify-content: center;
-  }
-
-  .project-description {
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    flex: 0 0 80vw;
+    max-width: 80vw;
   }
 }
 
-/* Larger devices (desktop) */
+/* Large devices (desktop and up) */
 @media (min-width: 768px) {
   .container {
-    justify-content: flex-start;
     scroll-snap-type: none;
+    justify-content: flex-start;
   }
 
   .project-slide {
     flex: 0 0 auto;
-    width: 350px;
-    margin: 0 15px;
-    padding: 20px;
+    width: 300px;
+    max-width: 350px;
   }
 }
 
