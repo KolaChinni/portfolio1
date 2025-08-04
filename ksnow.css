@@ -215,7 +215,7 @@ nav ul li a:hover::after{
         align-items: center;
         padding-top: 60px;
         z-index: 1000;
-        background-color: 0B0C2A;
+        background-color: #0B0C2A;
     }
     nav#nav-menu.active {
         right: 0;
@@ -601,15 +601,14 @@ nav:has(a:hover) a:not(:hover){
 
 
 
-
 /*-----projects------*/
 /* Main project area */
+/*-----projects------*/
 #project {
   background: rgba(0, 0, 0, 0.4);
-  min-height: auto;
+  min-height: 100vh;
   width: 100%;
-  padding: 5vh 5vw;
-  text-align: center;
+  padding: 5vh 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -617,7 +616,6 @@ nav:has(a:hover) a:not(:hover){
   flex-direction: column;
 }
 
-/* Project wrapper */
 .project-wrap {
   width: 100%;
   overflow: hidden;
@@ -626,130 +624,156 @@ nav:has(a:hover) a:not(:hover){
   align-items: center;
 }
 
-/* Horizontal container */
 .container {
   display: flex;
-  gap: 30px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory; /* 🔥 smooth scroll effect */
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-  padding-bottom: 10px;
+  padding: 0 10px;
   box-sizing: border-box;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
-
-/* Each project card */
 .project-slide {
-  width: 100%;
-  max-width: 400px; /* Optional max width to avoid huge cards on wide screens */
-  padding: 10px;
-  box-sizing: border-box;
-  border: 5px solid grey;
-  border-radius: 10px;
+  flex: 0 0 auto;
   scroll-snap-align: start;
-  transition: transform 0.3s ease-in-out;
-  flex: 0 0 auto; /* Let flex shrink and grow */
+  box-sizing: border-box;
+  margin: 0 10px;
+  padding: 20px;
+  border: 3px solid #00ffff;
+  border-radius: 15px;
+  background-color: #121212;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+  width: calc(100% - 40px); /* Mobile default */
 }
 
+@media (min-width: 481px) {
+  .project-slide {
+    width: calc(50% - 40px); /* 2 slides visible on tablets */
+  }
+}
 
-/* Image styles */
+@media (min-width: 768px) {
+  .container {
+    scroll-snap-type: none;
+  }
+
+  .project-slide {
+    width: 300px;
+    margin: 0 15px;
+  }
+}
+
 .project-image img {
   width: 100%;
-  border-radius: 8px;
-  height: 140px;
+  max-height: 200px;
+  border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
 }
+
 .project-description {
-  padding: 10px;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  color: white;
+  padding: 10px 5px;
+  color: #e0f7f7;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.4;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
-.project-description a{
-    text-decoration: none
+
+.project-description a {
+  text-decoration: none;
 }
-.pp{
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    font-size: 1rem;
-    color: white;
-}
-.ph1{
-    margin-bottom: 8vh;
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;                   
-    mix-blend-mode: overlay;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;                                 /* Main fill */
-    mix-blend-mode: screen;                       /* Better for dark backgrounds */
-   /* text-shadow:
-      0 0 8px rgba(255, 255, 255, 0.7),
-      0 0 16px rgba(255, 255, 255, 0.5),
-      0 0 24px rgba(0, 174, 255, 0.3);  */           /* Soft glow */
-    letter-spacing: 2px;
-    text-align: center;
-  
-}
-/* Button */
+
 .project-button {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background: #00FFFF;
+  display: inline-block;
+  width: 100%;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00ffff 0%, #0077ff 100%);
   color: white;
   border: none;
   cursor: pointer;
+  box-shadow: 0 0 10px #00ffff;
   transition: all 0.3s ease-in-out;
+  text-align: center;
 }
 
 .project-button:hover {
+  background: linear-gradient(135deg, #0077ff 0%, #00ffff 100%);
+  box-shadow: 0 0 15px #0077ff;
   transform: scale(1.05);
-  box-shadow: 0 0 1rem #00FFFF;
 }
+
 #PbackBtn,
 #PnextBtn {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  filter: drop-shadow(0 0 2px #00ffff);
+  transition: filter 0.3s ease-in-out;
 }
-/* Responsive tweaks */
-@media (min-width: 768px) {
+#PbackBtn:hover,
+#PnextBtn:hover {
+  filter: drop-shadow(0 0 6px #0077ff);
+}
+
+/* Small devices (mobile) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .project-slide {
+    flex: 0 0 100%;
+    margin: 0 10px; /* spacing between slides */
+    padding: 15px;
+    border-width: 2px;
+  }
+}
+
+/* Medium devices (tablet) */
+@media (min-width: 481px) and (max-width: 767px) {
   .project-slide {
     flex: 0 0 auto;
-    width: 350px;
-    scroll-snap-align: unset;
+    width: 320px;
+    margin: 0 15px;
+    padding: 18px;
   }
 
   .container {
-    scroll-snap-type: none;
+    justify-content: center;
+  }
+
+  .project-description {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+}
+
+/* Larger devices (desktop) */
+@media (min-width: 768px) {
+  .container {
     justify-content: flex-start;
+    scroll-snap-type: none;
   }
-}
-@media (max-width: 480px) {
+
   .project-slide {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .project-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .pp {
-    font-size: 0.9rem;
+    flex: 0 0 auto;
+    width: 350px;
+    margin: 0 15px;
+    padding: 20px;
   }
 }
+
 
 /*----------Contact--------------*/
 #contact {
@@ -941,5 +965,6 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
 
 
