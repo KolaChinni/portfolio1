@@ -616,7 +616,13 @@ nav:has(a:hover) a:not(:hover){
   box-sizing: border-box;
   flex-direction: column;
 }
-
+.ph1{
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    place-items: center;
+    height: 50px;
+    margin-top: 4%;
+    margin-bottom: 6%;
+}
 .project-wrap {
   width: 100%;
   overflow: hidden;
@@ -730,17 +736,34 @@ nav:has(a:hover) a:not(:hover){
 /* Small devices (mobile) */
 @media (max-width: 480px) {
   .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0 10px;
   }
 
   .project-slide {
-    flex: 0 0 100%;
-    margin: 0 10px; /* spacing between slides */
+    width: 100%;
+    min-width: 100%;
+    margin: 10px 0;
     padding: 15px;
     border-width: 2px;
+    scroll-snap-align: center;
+  }
+
+  .ph1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .project-button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  #PbackBtn,
+  #PnextBtn {
+    width: 30px;
+    height: 30px;
   }
 }
+
 
 /* Medium devices (tablet) */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -774,7 +797,6 @@ nav:has(a:hover) a:not(:hover){
     padding: 20px;
   }
 }
-
 /*----------Contact--------------*/
 #contact {
   background: rgba(0, 0, 0, 0.4);
@@ -965,3 +987,4 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
