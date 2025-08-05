@@ -352,14 +352,17 @@ nav:has(a:hover) a:not(:hover){
 }
 
 /*---------------ABout---------------------*/
-#about{
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.4)
+#about {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding-bottom: 5vh;
+  transition: padding 0.3s ease;
 }
+
 .aboutme{
     font-size: 5vh;
     place-items: center;
@@ -488,12 +491,19 @@ nav:has(a:hover) a:not(:hover){
 }
 
 
-.tab-contents{
-    display: none;
+.tab-contents {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  display: block; /* Always block to avoid layout collapse */
 }
-.tab-contents.active-tab{
-    display: block;
+
+.tab-contents.active-tab {
+  max-height: 1000px; /* Enough to cover content height */
+  opacity: 1;
 }
+
 .tab-contents ul li {
   font-size: 1.2rem; /* Slightly smaller and consistent across screen sizes */
   font-family: "Hedvig Letters Serif", serif;
@@ -602,28 +612,31 @@ nav:has(a:hover) a:not(:hover){
 
 
 /*-----projects------*/
-/* Main project area */
-/*-----projects------*/
-/* Main project area */
-/*-----projects------*/
-/* Main project area */
-/* ===== Main Project Area ===== */
-/* ===== Main Project Area ===== */
- /*-----projects------*/
-/* Main project area */
-/*-----projects------*/
-/* Main project area */
+
 #project {
   background: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
   width: 100%;
-  padding: 5vh 0;
+  padding: 10vh 0;
+  scroll-margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
 }
+#project {
+  background: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+  width: 100%;
+  padding: 6vh 0 12vh; /* More space on bottom for mobile */
+  scroll-margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 
 .ph1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
