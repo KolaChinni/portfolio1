@@ -602,33 +602,33 @@ nav:has(a:hover) a:not(:hover){
 
 
 /*-----projects------*/
+/*-----projects------*/
+/* Main project area */
 #project {
   background: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
   width: 100%;
   padding: 5vh 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   box-sizing: border-box;
 }
 
 .ph1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   text-align: center;
-  margin-bottom: 4vh;
+  margin: 4% 0 6%;
   padding: 0 10px;
-  color: #00ffff;
-  font-family: 'Poppins', sans-serif;
 }
 
 .project-wrap {
   width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  position: relative;
 }
 
 .container {
@@ -636,11 +636,13 @@ nav:has(a:hover) a:not(:hover){
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   padding: 0 10px;
   box-sizing: border-box;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  max-width: 100%;
 }
 
 .container::-webkit-scrollbar {
@@ -648,24 +650,23 @@ nav:has(a:hover) a:not(:hover){
 }
 
 .project-slide {
-  flex: 0 0 90%;
-  max-width: 400px;
+  flex: 0 0 auto;
   scroll-snap-align: center;
-  margin: 0 10px;
+  box-sizing: border-box;
+  margin: 10px;
   padding: 20px;
-  border: 2px solid #00ffff;
+  border: 3px solid #00ffff;
   border-radius: 15px;
   background-color: #121212;
   box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .project-image img {
   width: 100%;
-  height: auto;
   max-height: 200px;
   border-radius: 12px;
   object-fit: cover;
@@ -673,18 +674,20 @@ nav:has(a:hover) a:not(:hover){
 }
 
 .project-description {
-  margin-top: 15px;
+  padding: 10px 5px;
   color: #e0f7f7;
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   text-align: left;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
-.project-description h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  color: #00ffff;
+.project-description a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-button {
@@ -713,51 +716,59 @@ nav:has(a:hover) a:not(:hover){
 #PnextBtn {
   width: 40px;
   height: 40px;
-  border: none;
-  background: transparent;
-  color: #00ffff;
-  font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  user-select: none;
+  filter: drop-shadow(0 0 2px #00ffff);
+  transition: filter 0.3s ease-in-out;
 }
 
 #PbackBtn:hover,
 #PnextBtn:hover {
-  transform: scale(1.2);
-  color: #0077ff;
+  filter: drop-shadow(0 0 6px #0077ff);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 480px) {
+/* === Responsive Breakpoints === */
+
+/* Extra small devices (up to 360px) */
+@media (max-width: 360px) {
   .project-slide {
-    flex: 0 0 95%;
-    margin: 0 5px;
-    padding: 15px 10px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px 20px;
   }
 }
 
+/* Small devices (361px to 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .project-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+/* Medium devices (tablet) */
 @media (min-width: 481px) and (max-width: 767px) {
   .project-slide {
-    flex: 0 0 80%;
-    max-width: 350px;
-    margin: 0 10px;
+    flex: 0 0 80vw;
+    max-width: 80vw;
   }
 }
 
+/* Large devices (desktop and up) */
 @media (min-width: 768px) {
   .container {
-    justify-content: center;
     scroll-snap-type: none;
+    justify-content: flex-start;
   }
+
   .project-slide {
     flex: 0 0 auto;
     width: 300px;
-    margin: 0 15px;
+    max-width: 350px;
   }
 }
-
-
 
 /*----------Contact--------------*/
 #contact {
@@ -949,4 +960,5 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
 
