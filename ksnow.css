@@ -602,6 +602,15 @@ nav:has(a:hover) a:not(:hover){
 
 
 /*-----projects------*/
+/* Main project area */
+/*-----projects------*/
+/* Main project area */
+/*-----projects------*/
+/* Main project area */
+/* ===== Main Project Area ===== */
+/* ===== Main Project Area ===== */
+ /*-----projects------*/
+/* Main project area */
 /*-----projects------*/
 /* Main project area */
 #project {
@@ -769,6 +778,8 @@ nav:has(a:hover) a:not(:hover){
     max-width: 350px;
   }
 }
+
+
 
 /*----------Contact--------------*/
 #contact {
@@ -960,5 +971,6 @@ nav:has(a:hover) a:not(:hover){
     font-size: 2.5rem;
   }
 }
+
 
 
