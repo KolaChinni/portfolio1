@@ -3,304 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KVSP Portfolio - AI & ML Engineer specializing in machine learning, deep learning, and data science solutions">
+    <meta name="keywords" content="AI, Machine Learning, Deep Learning, Data Science, Python, TensorFlow, Portfolio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="other-images/favicon.ico">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="ksnow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1248de4e6b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <title>KVSP Portfolio</title>
+    
+    <title>KVSP | AI & ML Engineer Portfolio</title>
 </head>
 <body>
-    <video class="pc-video" autoplay muted loop>
-        <source src="other-images\background-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-  </video> 
-    <div class="snowfall">
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
-        <div class="snowflake"></div>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
     </div>
-    <!-------Header----------->
-    <header>
-        <div class="logo"><span></span><span>K</span>VSP.</div>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <nav id="nav-menu">
+    
+    <!-- Video Background -->
+    <video class="pc-video" autoplay muted loop playsinline>
+        <source src="other-images/background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="logo">
+            <span class="logo-icon">⟁</span>
+            <span class="logo-text">KV<span class="logo-highlight">SP</span></span>
+        </div>
+        
+        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+        
+        <nav id="nav-menu" class="glass-nav">
             <ul>
-                <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
-                <li><a href="#project"><i class="fa-solid fa-briefcase"></i> Work</a></li>
-                <li><a href="#contact"><i class="fa-solid fa-address-card"></i> Contact</a></li>
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#project" class="nav-link"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
             </ul>
+            <div class="nav-indicator"></div>
         </nav>
     </header>
-    <!-------Home----------->
-    <div id="home">
-        <div class="content">
-            <p>Hi,I'm Venkata Sai <span>Putrayya</span> Kola</p>
-            <br />
-            <p style="font-size: 30px"><span id="typed-text"></span></p>
-        </div>
-        <div class="myphoto">
-            <img src="other-images\myimage.jpg" alt="kvsp">
-        </div>
-    </div>
-    <!--------About--------->
-    <div id="about">
-        <div class="aboutme">
-            <h3><span>About</span> me</h3>
-        </div>
-        <div class="data">
-            <br />
-            <div class="my-data">
-                <p>
-                    I am an enthusiastic undergraduate pursuing a degree in
-                     <strong>Artificial Intelligence and Machine Learning (AI & ML)</strong>,
-                      with a strong foundation in core machine learning principles, algorithms, and
-                       model development. My academic journey has been enriched by hands-on projects and
-                        research explorations that deepen my expertise in building data-driven AI solutions.
-                </p>
-                <p>
-                    Currently, I am actively expanding my skills in 
-                    <strong>Machine Learning Research</strong>,
-                     focusing on solving real-world problems through AI applications.
-                      I am passionate about continuous learning and aim to bridge the gap 
-                      between theoretical knowledge and practical innovation in the AI & ML field.
-                </p>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="home-container">
+                <div class="home-content">
+                    <div class="greeting">
+                        <span class="greeting-text">Hello, I'm</span>
+                    </div>
+                    <h1 class="name-title">
+                        <span class="name-part">Venkata Sai</span>
+                        <span class="name-highlight">Putrayya Kola</span>
+                    </h1>
+                    <div class="typing-container">
+                        <span class="typed-prefix">I'm a </span>
+                        <span id="typed-text" class="typed-text"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                    <p class="home-description">
+                        AI & ML Engineer passionate about creating intelligent solutions, 
+                        transforming data into actionable insights, and pushing the 
+                        boundaries of machine learning innovation.
+                    </p>
+                    <div class="home-actions">
+                        <a href="#project" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                        <span class="scroll-text">Scroll Down</span>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <div class="image-frame">
+                        <img src="other-images/myimage.jpg" alt="Venkata Sai Putrayya Kola" class="profile-image">
+                        <div class="image-glow"></div>
+                        <div class="tech-badges">
+                            <div class="badge python">Python</div>
+                            <div class="badge tensorflow">TensorFlow</div>
+                            <div class="badge ml">ML</div>
+                            <div class="badge ai">AI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-text">About</span>
+                    <span class="title-highlight">Me</span>
+                </h2>
+                <p class="section-subtitle">Get to know my background, skills, and journey</p>
             </div>
-            <br />
-
-            <br />
-            <div class="tab">
-                <p class="tab-links active-link" onclick="opentab('skill','s')" id="s">skill</p>
-                <p class="tab-links" onclick="opentab('education','e')" id="e">Education</p>
-                <!--<p class="tab-links" onclick="opentab('certifications','c')" id="c">Certifications</p>-->
-                <p class="tab-links" onclick="opentab('achievements','a')" id="a">Achievements</p>
-            </div>
-            <br>
-            <br>
-            <div class="description-contents">
-                <div class="tab-contents active-tab" id="skill">
-                    <ul>
-                        <li>Machine Learning (Supervised & Unsupervised)</li>
-                        <li>Tensorflow and scikit-learn</li>
-                        <li>Deep Learning (Neural Networks, CNNs)</li>
-                        <li>Python (Numpy, Pandas, Matplotlib, Scikit-learn)</li>
-                    </ul>
-                </div>
-            <div class="tab-contents" id="education">
-                <ul>
-                    <li>
-                        <h3>B.Tech in Artificial Intelligence and Machine Learning</h3>
-                        <p>BVCITS College of Engineering | 2023 - 2027</p>
-                        <p>CGPA: 8.9 / 10</p>
-                    </li>
-                    <li>
-                        <h3>MPC (Maths, Physics, Chemistry)</h3>
-                        <p>Aditya Junior College | 2021 - 2023</p>
-                        <p>Percentage: 94.8%</p>
-                    </li>
-                </ul>
-            </div>
-<!--                <div class="tab-contents" id="certifications">
-                    <ul>
-                        <li>Crash course on python by Google</li>
-                        <li>Machine Learning Specilization by deepLearning</li>
-                        <li>Deep Learning Specialization by deeplearning</li>
-                        <li>pyhton,sql,ProbelSolving basics certification by Hackerrank</li>
-                    </ul>
-                </div> -->
-                <div class="tab-contents" id="achievements">
-                    <ul>
-                        <li>Intern at Supraja Technologies</li>
-                    </ul>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>            
-            </div>
-        </div>
-
-<!--        <div class="certi-section">
-            <h2><span>Certificate</span> Gallery</h2>
-            <div class="certi-wrap">
-                <img src="other-images/back-button.png" id="backBtn" alt="Back">
-                <div class="certi" id="imageScroller">
-                    <span><img src="certi-images/image-1.png" alt="Certificate 1"></span>
-                    <span><img src="certi-images/image-2.png" alt="Certificate 2"></span>
-                    <span><img src="certi-images/image-3.png" alt="Certificate 3"></span>
-                    <span><img src="certi-images/image-4.png" alt="Certificate 4"></span>
-                    <span><img src="certi-images/image-5.png" alt="Certificate 5"></span>
-                    <span><img src="certi-images/image-6.png" alt="Certificate 6"></span>
-                    <span><img src="certi-images/image-7.png" alt="Certificate 7"></span>
-                    <span><img src="certi-images/image-8.png" alt="Certificate 8"></span>
-                    <span><img src="certi-images/image-9.png" alt="Certificate 9"></span>
-                    <span><img src="certi-images/image-10.png" alt="Certificate 10"></span>
-                    <span><img src="certi-images/image-11.png" alt="Certificate 11"></span>
-                    <span><img src="certi-images/image-12.png" alt="Certificate 12"></span>
-                    <span><img src="certi-images/image-13.png" alt="Certificate 13"></span>
-                    <span><img src="certi-images/image-14.png" alt="Certificate 14"></span>                    
-                </div>
-                <img src="other-images/next-button.png" id="nextBtn" alt="Next">
-            </div>-->
-        </div>
-    </div>
-    <!----------projects--------------->
-    <div id="project">
-        <div class="ph1">
-            <h3><span>My</span> Projects</h3>
-        </div>
-        <div class="project-wrap">
-            <img src="other-images/back-button.png" id="PbackBtn" alt="Back">
-            <div class="container" id="projectScroller">
-                <div class="project-slide">
-                    <div class="project-image">
-                       <img src="project-images\fetalProject.jpeg" alt="Certificate 1"> 
-                    </div>
-                    <br />
-                    <div class="project-description">
-                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
-                        <br />
-                        <p class="pp">A neural network-based model that predicts fetal health 
-                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
-                            It aids in early detection of
-                            fetal distress for better clinical decision-making.</p>
-                            <br>
-                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
-                        target="_blank" 
-                        class="project-button">View</a>
-                    </div>
-
-                </div>
-                <div class="project-slide">
-                    <div class="project-image">
-                        <img src="project-images\simplelinearregression.png" alt="Certificate 1">
-                    </div>
-                    <div class="project-description">
-                        <h2 style="color: #00FFFF;">Simple Linear Regression</h2>
-                        <br />
-                        <p class="pp">An interactive web app that visually demonstrates
-                             multiple types of linear regression techniques for a 
-                             single-variable dataset, aiding understanding through real-time 
-                             plots.</p>
-                             <p class="pp"><span style="color: yellow; font-family: poppins;font-weight: bolder;">Algortims</span> OLS,GradientDescent,Ridge,Lasso,Elasticnet,
-                                DecisionTree,RandomForest,etc..</p>
-                            <br>
-                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
-                        target="_blank" 
-                        class="project-button">View</a>
-                    </div>
-
-                </div>
-                <div class="project-slide">
-                    <div class="project-image">
-                       <img src="project-images\multiplelinearregression.png" alt="Certificate 1"> 
-                    </div>
-                    <div class="project-description">
-                        <h2 style="color: #00FFFF;">Multiple Linear Regression</h2>
-                        <br />
-                        <p class="pp">An interactive app that visualizes and compares multiple linear 
-                            regression techniques on multi-feature datasets. Helps users understand 
-                            model behavior, 
-                            coefficients, and error metrics in real-time.</p>
-                        <p class="pp"><span style="color: yellow; font-family: poppins;font-weight: bolder;">Algortims</span> OLS,GradientDescent,Ridge,Lasso,Elasticnet,
-                        DecisionTree,RandomForest,etc..</p>
-                            <br>
-                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
-                        target="_blank" 
-                        class="project-button">View</a>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-intro">
+                        <h3 class="about-heading">AI & ML Enthusiast</h3>
+                        <p class="about-text">
+                            I am an enthusiastic undergraduate pursuing a degree in 
+                            <strong>Artificial Intelligence and Machine Learning (AI & ML)</strong>, 
+                            with a strong foundation in core machine learning principles, algorithms, 
+                            and model development.
+                        </p>
+                        <p class="about-text">
+                            My academic journey has been enriched by hands-on projects and 
+                            research explorations that deepen my expertise in building 
+                            data-driven AI solutions.
+                        </p>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Years Learning</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                        </div>
                     </div>
                     
-                </div>
-                <div class="project-slide">
-                    <div class="project-image">
-                        <img src="images/image-1.png" alt="Certificate 1">
-                    </div>     
-                    <div class="project-description">
-                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
-                        <br />
-                        <p class="pp">A neural network-based model that predicts fetal health 
-                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
-                            It aids in early detection of
-                            fetal distress for better clinical decision-making.</p>
-                            <br>
-                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
-                        target="_blank" 
-                        class="project-button">View</a>
+                    <div class="about-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" data-tab="skills">
+                                <i class="fas fa-code"></i>
+                                <span>Skills</span>
+                            </button>
+                            <button class="tab-button" data-tab="education">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Education</span>
+                            </button>
+                            <button class="tab-button" data-tab="achievements">
+                                <i class="fas fa-trophy"></i>
+                                <span>Achievements</span>
+                            </button>
+                        </div>
+                        
+                        <div class="tab-contents">
+                            <div class="tab-content active" id="skills">
+                                <div class="skills-grid">
+                                    <div class="skill-category">
+                                        <h4 class="skill-category-title">Machine Learning</h4>
+                                        <div class="skill-items">
+                                            <span class="skill-item">Supervised Learning</span>
+                                            <span class="skill-item">Unsupervised Learning</span>
+                                            <span class="skill-item">Neural Networks</span>
+                                            <span class="skill-item">CNNs</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <h4 class="skill-category-title">Frameworks & Libraries</h4>
+                                        <div class="skill-items">
+                                            <span class="skill-item">TensorFlow</span>
+                                            <span class="skill-item">Scikit-learn</span>
+                                            <span class="skill-item">Keras</span>
+                                            <span class="skill-item">PyTorch</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-category">
+                                        <h4 class="skill-category-title">Programming</h4>
+                                        <div class="skill-items">
+                                            <span class="skill-item">Python</span>
+                                            <span class="skill-item">NumPy</span>
+                                            <span class="skill-item">Pandas</span>
+                                            <span class="skill-item">Matplotlib</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="education">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">2023 - 2027</div>
+                                        <br />
+                                        <div class="timeline-content">
+                                            <h4 class="timeline-title">B.Tech in AI & ML</h4>
+                                            <p class="timeline-subtitle">BVCITS College of Engineering</p>
+                                            <p class="timeline-desc">CGPA: 8.9/10</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">2021 - 2023</div>
+                                        <br />
+                                        <div class="timeline-content">
+                                            <h4 class="timeline-title">MPC (Maths, Physics, Chemistry)</h4>
+                                            <p class="timeline-subtitle">Aditya Junior College</p>
+                                            <p class="timeline-desc">Percentage: 94.8%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="achievements">
+                                <div class="achievements-list">
+                                    <div class="achievement-item">
+                                        <div class="achievement-icon">
+                                            <i class="fas fa-medal"></i>
+                                        </div>
+                                        <div class="achievement-content">
+                                            <h4 class="achievement-title">Intern at Supraja Technologies</h4>
+                                            <p class="achievement-desc">Gained practical experience in AI implementation and development workflows</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-slide">
-                    <div class="project-image">
-                        <img src="images/image-1.png" alt="Certificate 1">
-                    </div>
-                    <div class="project-description">
-                        <h2 style="color: #00FFFF;">Fetal-health prediction</h2>
-                        <br />
-                        <p class="pp">A neural network-based model that predicts fetal health 
-                            (normal, suspect, pathological) using cardiotocography (CTG) data. 
-                            It aids in early detection of
-                            fetal distress for better clinical decision-making.</p>
-                            <br>
-                        <a href="https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/" 
-                        target="_blank" 
-                        class="project-button">View</a>
-                    </div>  
-                </div>   
             </div>
-            <img src="other-images/next-button.png" id="PnextBtn" alt="Next">
-        </div>
-    </div>
-    <!-------------------------contact--------------------------------------->
-    <div id="contact">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="ch1">
-                    <span>Contact</span> Me
-                </h1>
-                <p><i class="fa-solid fa-paper-plane"></i>venkatasaiputrayyakola@gmail.com</p>
-                <p><i class="fa-solid fa-square-phone"></i>8121188303</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/kola-venkata-sai-putrayya-7spvsbbs/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+            
+            <!-- Certificate Gallery -->
+            <div class="certificate-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        <span class="title-text">Certification</span>
+                        <span class="title-highlight">Gallery</span>
+                    </h3>
                 </div>
-                    <a href="VENKATA SAI PUTRAYYA KOLA-1.docx" class="cvbutton" download>Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
-                    <button type="submit" id="submit-btn" class="animated-submit">
-                        <span class="btn-text">Send</span>
-                        <span class="spinner"></span>
-                        <span class="checkmark">&#10003;</span>
+                
+                <div class="certificate-carousel">
+                    <button class="carousel-btn prev-btn" id="certPrevBtn" aria-label="Previous certificate">
+                        <i class="fas fa-chevron-left"></i>
                     </button>
-
-                </form>
-            </div>        
+                    
+                    <div class="certificate-track" id="certificateTrack">
+                        <!-- Certificates will be loaded here via JavaScript -->
+                    </div>
+                    
+                    <button class="carousel-btn next-btn" id="certNextBtn" aria-label="Next certificate">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-dots" id="certDots"></div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="project" class="section projects-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-text">My</span>
+                    <span class="title-highlight">Projects</span>
+                </h2>
+                <p class="section-subtitle">Explore my machine learning and data science implementations</p>
+            </div>
+            
+            <div class="projects-carousel">
+                <button class="carousel-btn prev-btn" id="projectPrevBtn" aria-label="Previous project">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="projects-container" id="projectsContainer">
+                    <!-- Projects will be loaded dynamically -->
+                </div>
+                
+                <button class="carousel-btn next-btn" id="projectNextBtn" aria-label="Next project">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-dots" id="projectDots"></div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-text">Contact</span>
+                    <span class="title-highlight">Me</span>
+                </h2>
+                <p class="section-subtitle">Let's discuss AI, ML, or potential collaborations</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 class="contact-title">Get In Touch</h3>
+                        <p class="contact-text">
+                            I'm always open to discussing machine learning projects, 
+                            research opportunities, or potential collaborations.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-detail">
+                                    <span class="detail-label">Email</span>
+                                    <a href="mailto:venkatasaiputrayyakola@gmail.com" class="detail-value">venkatasaiputrayyakola@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-detail">
+                                    <span class="detail-label">Phone</span>
+                                    <a href="tel:+918121188303" class="detail-value">+91 81211 88303</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/kola-venkata-sai-putrayya-7spvsbbs/" target="_blank" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="VENKATA SAI PUTRAYYA KOLA-1.docx" class="btn btn-download" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" name="submit-to-google-sheet">
+                        <div class="form-group">
+                            <input type="text" name="Name" id="name" required>
+                            <label for="name">Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="Message" id="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <div class="btn-loader">
+                                <div class="loader-spinner"></div>
+                            </div>
+                            <i class="fas fa-paper-plane btn-icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">⟁</span>
+                <span class="logo-text">KV<span class="logo-highlight">SP</span></span>
+            </div>
+            <p class="footer-text">AI & Machine Learning Engineer</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copyright">© 2024 KVSP. All rights reserved.</p>
         </div>
-    </div>
-<script src="ksnow.js">
-</script>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="ksnow.js"></script>
 </body>
+</html>
