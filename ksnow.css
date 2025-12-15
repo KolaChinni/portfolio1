@@ -1,5 +1,6 @@
 /* ================================
    KVSP Portfolio - Modern AI/ML Theme
+   ENHANCED WITH BETTER SCROLLING & INTERACTIVITY
    ================================ */
 
 /* ===== RESET & BASE STYLES ===== */
@@ -54,6 +55,9 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -64,8 +68,13 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Enable smooth scrolling on all devices */
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Custom scrollbar for webkit browsers */
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -81,6 +90,12 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, var(--primary-dark), var(--secondary));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--dark-bg);
 }
 
 /* ===== BACKGROUND ELEMENTS ===== */
@@ -174,6 +189,7 @@ body::-webkit-scrollbar-thumb:hover {
   opacity: 0.2;
   z-index: -3;
   filter: blur(2px) brightness(0.3);
+  pointer-events: none;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -209,6 +225,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .logo:hover {
@@ -258,6 +275,7 @@ body::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
   padding: var(--space-sm);
   z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger-line {
@@ -296,6 +314,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-link:hover {
@@ -340,6 +359,7 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   position: relative;
   scroll-margin-top: 80px;
+  width: 100%;
 }
 
 .section-header {
@@ -390,26 +410,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* ===== HOME SECTION ===== */
-/* Add margin to the home container */
-.home-container {
-    margin-top: 20px; /* Extra spacing if needed */
-}
-
-/* Or adjust the photo frame */
-.image-frame {
-    margin-top: 20px; /* Push photo down */
-}
-
-/* Mobile specific fix */
-@media (max-width: 768px) {
-    .home-container {
-        margin-top: 40px; /* More space on mobile */
-    }
-    
-    .image-frame {
-        margin-top: 90px;
-    }
-}
 .home-section {
   padding-top: calc(var(--space-xl) * 2);
 }
@@ -422,6 +422,7 @@ body::-webkit-scrollbar-thumb:hover {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
 
 .home-content {
@@ -503,6 +504,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -519,6 +521,9 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .btn::before {
@@ -660,6 +665,8 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   gap: var(--space-sm);
   z-index: 3;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .badge {
@@ -668,6 +675,8 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 0.8rem;
   font-weight: 600;
   animation: badgeFloat 3s infinite ease-in-out;
+  min-width: 60px;
+  text-align: center;
 }
 
 .badge.python {
@@ -807,6 +816,8 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 60px;
 }
 
 .tab-button:hover {
@@ -822,6 +833,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .tab-contents {
   padding: var(--space-xl);
+  overflow: hidden;
 }
 
 .tab-content {
@@ -995,9 +1007,11 @@ body::-webkit-scrollbar-thumb:hover {
   line-height: 1.6;
 }
 
-/* Certificate Gallery */
+/* ===== ENHANCED CERTIFICATE CAROUSEL ===== */
 .certificate-section {
   margin-top: var(--space-xl);
+  width: 100%;
+  overflow: hidden;
 }
 
 .certificate-carousel {
@@ -1006,6 +1020,8 @@ body::-webkit-scrollbar-thumb:hover {
   gap: var(--space-lg);
   margin: var(--space-xl) auto;
   max-width: 1200px;
+  width: 100%;
+  position: relative;
 }
 
 .certificate-track {
@@ -1016,12 +1032,20 @@ body::-webkit-scrollbar-thumb:hover {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: var(--space-md) 0;
+  padding: var(--space-md) var(--space-lg);
   scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .certificate-track::-webkit-scrollbar {
   display: none;
+}
+
+.certificate-track:active {
+  cursor: grabbing;
 }
 
 .certificate-track img {
@@ -1031,8 +1055,12 @@ body::-webkit-scrollbar-thumb:hover {
   object-fit: cover;
   border-radius: 10px;
   border: 2px solid var(--glass-border);
-  transition: transform var(--transition-normal);
+  transition: all var(--transition-normal);
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
+  user-drag: none;
+  touch-action: pan-y;
 }
 
 .certificate-track img:hover {
@@ -1053,6 +1081,10 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   transition: all var(--transition-normal);
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 10;
 }
 
 .carousel-btn:hover {
@@ -1070,15 +1102,17 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
+  flex-wrap: wrap;
 }
 
 .carousel-dots .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-dots .dot.active {
@@ -1086,9 +1120,15 @@ body::-webkit-scrollbar-thumb:hover {
   transform: scale(1.3);
 }
 
-/* ===== PROJECTS SECTION ===== */
+.carousel-dots .dot:hover {
+  transform: scale(1.2);
+}
+
+/* ===== ENHANCED PROJECTS SECTION ===== */
 .projects-section {
   background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  width: 100%;
+  overflow: hidden;
 }
 
 .projects-carousel {
@@ -1097,6 +1137,8 @@ body::-webkit-scrollbar-thumb:hover {
   gap: var(--space-lg);
   margin: var(--space-xl) auto;
   max-width: 1400px;
+  width: 100%;
+  position: relative;
 }
 
 .projects-container {
@@ -1105,9 +1147,12 @@ body::-webkit-scrollbar-thumb:hover {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-xl);
   padding: var(--space-md) 0;
+  width: 100%;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Project Card */
+/* Enhanced Project Card with better scrolling */
 .project-card {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -1116,6 +1161,13 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   transition: all var(--transition-normal);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+  cursor: pointer;
+  position: relative;
 }
 
 .project-card:hover {
@@ -1128,6 +1180,7 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .project-image img {
@@ -1135,6 +1188,8 @@ body::-webkit-scrollbar-thumb:hover {
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-normal);
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .project-card:hover .project-image img {
@@ -1143,6 +1198,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 .project-content {
   padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .project-tag {
@@ -1154,18 +1213,37 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
+  align-self: flex-start;
 }
 
 .project-title {
   color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: var(--space-sm);
+  line-height: 1.3;
 }
 
 .project-description {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-md);
+  flex: 1;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 5px;
+}
+
+.project-description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.project-description::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-description::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 2px;
 }
 
 .project-tech {
@@ -1187,6 +1265,7 @@ body::-webkit-scrollbar-thumb:hover {
 .project-actions {
   display: flex;
   gap: var(--space-sm);
+  margin-top: auto;
 }
 
 .btn-view,
@@ -1198,6 +1277,11 @@ body::-webkit-scrollbar-thumb:hover {
   text-decoration: none;
   text-align: center;
   transition: all var(--transition-fast);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-view {
@@ -1299,6 +1383,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--text-primary);
   text-decoration: none;
   transition: color var(--transition-fast);
+  word-break: break-all;
 }
 
 .detail-value:hover {
@@ -1309,6 +1394,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
 }
 
 .social-link {
@@ -1322,6 +1408,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--text-primary);
   text-decoration: none;
   transition: all var(--transition-normal);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-link:hover {
@@ -1373,11 +1460,13 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--text-primary);
   font-size: 1rem;
   transition: all var(--transition-fast);
+  font-size: 16px; /* Prevent iOS zoom */
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
+  max-height: 300px;
 }
 
 .form-group label {
@@ -1445,6 +1534,11 @@ body::-webkit-scrollbar-thumb:hover {
   animation: spin 1s linear infinite;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .btn-submit.loading .btn-text,
 .btn-submit.loading .btn-icon {
   opacity: 0;
@@ -1503,12 +1597,14 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   gap: var(--space-lg);
   margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
 }
 
 .footer-links a {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-links a:hover {
@@ -1539,6 +1635,9 @@ body::-webkit-scrollbar-thumb:hover {
   transform: translateY(20px);
   transition: all var(--transition-normal);
   z-index: 999;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .back-to-top.visible {
@@ -1596,6 +1695,8 @@ body::-webkit-scrollbar-thumb:hover {
   
   .section {
     padding: var(--space-lg);
+    min-height: auto;
+    padding-top: 100px;
   }
   
   .glass-header {
@@ -1618,6 +1719,8 @@ body::-webkit-scrollbar-thumb:hover {
     transition: right 0.3s ease;
     z-index: 1000;
     padding-top: 80px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .glass-nav.active {
@@ -1631,6 +1734,7 @@ body::-webkit-scrollbar-thumb:hover {
   
   .nav-link {
     font-size: 1.2rem;
+    padding: var(--space-md) 0;
   }
   
   .home-actions {
@@ -1646,6 +1750,7 @@ body::-webkit-scrollbar-thumb:hover {
     grid-template-columns: 1fr;
   }
   
+  /* Enhanced certificate carousel for mobile */
   .certificate-carousel {
     gap: var(--space-md);
   }
@@ -1656,10 +1761,42 @@ body::-webkit-scrollbar-thumb:hover {
   
   .certificate-track {
     gap: var(--space-md);
+    padding: var(--space-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
   
   .certificate-track img {
-    width: 250px;
+    width: 280px;
+    height: 180px;
+  }
+  
+  /* Enhanced projects container for mobile */
+  .projects-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: none;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  
+  .projects-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .project-card {
+    min-width: 85vw;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    max-height: 120px;
   }
   
   .contact-card,
@@ -1670,6 +1807,22 @@ body::-webkit-scrollbar-thumb:hover {
   .footer-links {
     flex-direction: column;
     gap: var(--space-md);
+  }
+  
+  /* Hide carousel buttons on mobile */
+  .carousel-btn {
+    display: none;
+  }
+  
+  /* Make carousel dots more touch-friendly */
+  .carousel-dots .dot {
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+  }
+  
+  .tab-buttons {
+    flex-direction: column;
   }
 }
 
@@ -1701,6 +1854,7 @@ body::-webkit-scrollbar-thumb:hover {
   .badge {
     font-size: 0.7rem;
     padding: 0.3rem 0.8rem;
+    min-width: 50px;
   }
   
   .tab-buttons {
@@ -1712,11 +1866,64 @@ body::-webkit-scrollbar-thumb:hover {
   }
   
   .projects-container {
-    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .project-card {
+    min-width: 90vw;
   }
   
   .project-actions {
     flex-direction: column;
+  }
+  
+  .certificate-track img {
+    width: 250px;
+    height: 160px;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .carousel-btn:hover {
+    transform: none;
+  }
+  
+  .social-link:hover {
+    transform: none;
+  }
+  
+  .skill-item:hover {
+    transform: none;
+  }
+  
+  .stat-item:hover {
+    transform: none;
+  }
+  
+  .achievement-item:hover {
+    transform: none;
+  }
+  
+  /* Add active states for touch */
+  .project-card:active {
+    transform: scale(0.98);
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .carousel-btn:active {
+    transform: scale(0.95);
   }
 }
 
@@ -1748,6 +1955,28 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip to main content for screen readers */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: var(--dark-bg);
+  padding: 8px;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
 /* ===== PRINT STYLES ===== */
 @media print {
   .pc-video,
@@ -1771,10 +2000,19 @@ body::-webkit-scrollbar-thumb:hover {
   .section {
     min-height: auto;
     padding: 1rem !important;
+    page-break-inside: avoid;
   }
   
   a {
     color: black !important;
     text-decoration: underline;
+  }
+  
+  .project-card,
+  .contact-card,
+  .about-intro {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: white !important;
   }
 }
