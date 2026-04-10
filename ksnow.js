@@ -353,7 +353,6 @@ function initProjectsCarousel() {
             description: "A neural network-based model that predicts fetal health (normal, suspect, pathological) using cardiotocography (CTG) data.",
             tech: ["Python", "TensorFlow", "Neural Networks", "Healthcare AI"],
             features: ["Real-time prediction", "High accuracy", "Clinical application"],
-            liveUrl: "https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/",
             codeUrl: "https://github.com/KolaChinni/FetalHealthPrediction-Neural-Network-"
         },
         {
@@ -363,7 +362,6 @@ function initProjectsCarousel() {
             description: "An interactive web app that visually demonstrates multiple types of linear regression techniques for single-variable datasets.",
             tech: ["Streamlit", "Scikit-learn", "Plotly", "Python"],
             features: ["Multiple algorithms", "Real-time plots", "Educational tool"],
-            liveUrl: "https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/",
             codeUrl: "#"
         },
         {
@@ -372,7 +370,6 @@ function initProjectsCarousel() {
             image: "project-images/blackjack.jpg",
             description: "BlackJack game built with python and Tkinter.",
             tech: ["Python", "tkinter"],
-            liveUrl: "#",
             codeUrl: "https://github.com/KolaChinni/BlackJack-python-tkinter-"
         },
         {
@@ -382,7 +379,6 @@ function initProjectsCarousel() {
             description: "Exciting new project under development. Stay tuned for updates on this innovative application.",
             tech: ["React", "Node.js", "MongoDB", "Modern Stack"],
             features: ["Modern stack", "Responsive design", "Coming soon"],
-            liveUrl: "#",
             codeUrl: "#"
         },
         {
@@ -392,15 +388,11 @@ function initProjectsCarousel() {
             description: "Another exciting project is in the pipeline. This will demonstrate cutting-edge data analysis techniques.",
             tech: ["Python", "API", "Data Analysis", "Visualization"],
             features: ["Data visualization", "API integration", "Advanced analytics"],
-            liveUrl: "#",
             codeUrl: "#"
         }
     ];
-    const filteredProjects = projects.filter(p => 
-    p.liveUrl && p.liveUrl !== "#" && p.liveUrl.trim() !== ""
-      );
     // Create project cards
-    filteredProjects.forEach((project, index) => {
+    projects.forEach((project, index) => {
         const card = document.createElement('div');
         card.className = 'project-card';
         
@@ -416,10 +408,6 @@ function initProjectsCarousel() {
                     ${project.tech.map(tech => `<span class="tech-item">${tech}</span>`).join('')}
                 </div>
                 <div class="project-actions">
-                    <a href="${project.liveUrl}" target="_blank" class="btn-view">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>Live Demo</span>
-                    </a>
                     <a href="${project.codeUrl}" class="btn-code">
                         <i class="fab fa-github"></i>
                         <span>View Code</span>
