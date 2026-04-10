@@ -372,6 +372,7 @@ function initProjectsCarousel() {
             image: "project-images/blackjack.jpg",
             description: "BlackJack game built with python and Tkinter.",
             tech: ["Python", "tkinter"],
+            liveUrl: "#",
             codeUrl: "https://github.com/KolaChinni/BlackJack-python-tkinter-"
         },
         {
@@ -395,9 +396,11 @@ function initProjectsCarousel() {
             codeUrl: "#"
         }
     ];
-    
+    const filteredProjects = projects.filter(p => 
+    p.liveUrl && p.liveUrl !== "#" && p.liveUrl.trim() !== ""
+      );
     // Create project cards
-    projects.forEach((project, index) => {
+    filteredProjects.forEach((project, index) => {
         const card = document.createElement('div');
         card.className = 'project-card';
         
