@@ -354,7 +354,7 @@ function initProjectsCarousel() {
             tech: ["Python", "TensorFlow", "Neural Networks", "Healthcare AI"],
             features: ["Real-time prediction", "High accuracy", "Clinical application"],
             liveUrl: "https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/",
-            codeUrl: "#"
+            codeUrl: "https://github.com/KolaChinni/FetalHealthPrediction-Neural-Network-"
         },
         {
             title: "Simple Linear Regression",
@@ -367,14 +367,12 @@ function initProjectsCarousel() {
             codeUrl: "#"
         },
         {
-            title: "Multiple Linear Regression",
-            tag: "Machine Learning",
+            title: "BlackJack Game",
+            tag: "Python",
             image: "project-images/multiplelinearregression.png",
-            description: "An interactive app that visualizes and compares multiple linear regression techniques on multi-feature datasets.",
-            tech: ["Python", "Multiple Models", "Visualization", "Data Analysis"],
-            features: ["Model comparison", "Error metrics", "Real-time visualization"],
-            liveUrl: "https://linearregression-msz5sz7ksqxmuxjyr4cuvs8.streamlit.app/",
-            codeUrl: "#"
+            description: "BlackJack game built with python and Tkinter.",
+            tech: ["Python", "tkinter"],
+            codeUrl: "https://github.com/KolaChinni/BlackJack-python-tkinter-"
         },
         {
             title: "Coming Soon",
