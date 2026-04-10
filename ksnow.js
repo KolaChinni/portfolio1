@@ -369,7 +369,7 @@ function initProjectsCarousel() {
         {
             title: "BlackJack Game",
             tag: "Python",
-            image: "project-images/multiplelinearregression.png",
+            image: "project-images/blackjack.jpg",
             description: "BlackJack game built with python and Tkinter.",
             tech: ["Python", "tkinter"],
             codeUrl: "https://github.com/KolaChinni/BlackJack-python-tkinter-"
