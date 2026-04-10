@@ -126,12 +126,8 @@ function initTypedText() {
     
     try {
         new Typed('#typed-text', {
-            strings: [
-                'AI & Machine Learning Engineer',
-                'Deep Learning Specialist',
-                'Data Science Practitioner',
-                'Python Developer',
-                'Neural Networks Researcher'
+            strings: [,
+                'UG - AI Researcher'
             ],
             typeSpeed: 50,
             backSpeed: 30,
