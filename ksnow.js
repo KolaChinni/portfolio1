@@ -1,10 +1,11 @@
 /* ================================================================
    KVSP Portfolio - Interactive Engine (ksnow.js)
    Created for Venkata Sai Putrayya Kola
+   Fully Mobile & Touch Optimized
    ================================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('🚀 Initializing KVSP Portfolio Engine...');
+    console.log('🚀 Initializing KVSP Mobile & Desktop Portfolio Engine...');
 
     initCanvasBackground();
     initTypedText();
@@ -33,6 +34,18 @@ function initCanvasBackground() {
         mouse.y = e.y;
     });
 
+    window.addEventListener('touchmove', function (e) {
+        if (e.touches && e.touches[0]) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    window.addEventListener('touchend', function () {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
     window.addEventListener('mouseleave', function () {
         mouse.x = null;
         mouse.y = null;
@@ -48,8 +61,8 @@ function initCanvasBackground() {
         constructor() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.75;
-            this.vy = (Math.random() - 0.5) * 0.75;
+            this.vx = (Math.random() - 0.5) * 0.7;
+            this.vy = (Math.random() - 0.5) * 0.7;
             this.radius = Math.random() * 2 + 1;
             this.baseAlpha = Math.random() * 0.35 + 0.2;
         }
@@ -86,7 +99,7 @@ function initCanvasBackground() {
     let particles = [];
     function initParticles() {
         particles = [];
-        const count = Math.min(Math.floor((width * height) / 18000), 75);
+        const count = Math.min(Math.floor((width * height) / 18000), window.innerWidth < 768 ? 40 : 75);
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());
         }
@@ -160,7 +173,14 @@ function initNavigation() {
     const sections = document.querySelectorAll('.section');
     const backToTopBtn = document.getElementById('backToTopBtn');
 
+    function triggerHaptic() {
+        if (navigator.vibrate) {
+            try { navigator.vibrate(15); } catch (e) {}
+        }
+    }
+
     function toggleDrawer(open) {
+        triggerHaptic();
         if (open) {
             drawer.classList.add('open');
             backdrop.classList.add('active');
@@ -189,7 +209,7 @@ function initNavigation() {
     });
 
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 80) {
+        if (window.scrollY > 70) {
             header.classList.add('scrolled');
             if (backToTopBtn) backToTopBtn.classList.add('visible');
         } else {
@@ -199,7 +219,7 @@ function initNavigation() {
 
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
+            const sectionTop = section.offsetTop - 110;
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('id');
             }
@@ -215,33 +235,47 @@ function initNavigation() {
 
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', function () {
+            triggerHaptic();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 }
 
-/* ===== 4. 3D CARD TILT EFFECT ===== */
+/* ===== 4. 3D CARD TILT & MOBILE TOUCH TILT EFFECT ===== */
 function initTiltEffect() {
-    const card = document.querySelector('.tilt-card');
+    const card = document.getElementById('heroProfileCard') || document.querySelector('.tilt-card');
     if (!card) return;
 
-    card.addEventListener('mousemove', function (e) {
+    function handleMove(clientX, clientY) {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
 
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = (centerY - y) / 12;
-        const rotateY = (x - centerX) / 12;
+        const rotateX = (centerY - y) / 10;
+        const rotateY = (x - centerX) / 10;
 
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    }
+
+    card.addEventListener('mousemove', function (e) {
+        handleMove(e.clientX, e.clientY);
     });
 
-    card.addEventListener('mouseleave', function () {
+    card.addEventListener('touchmove', function (e) {
+        if (e.touches && e.touches[0]) {
+            handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    }, { passive: true });
+
+    function resetTilt() {
         card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
+    }
+
+    card.addEventListener('mouseleave', resetTilt);
+    card.addEventListener('touchend', resetTilt);
 }
 
 /* ===== 5. DASHBOARD TABS ===== */
@@ -251,6 +285,9 @@ function initDashboardTabs() {
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            if (navigator.vibrate) {
+                try { navigator.vibrate(15); } catch (e) {}
+            }
             const targetId = button.getAttribute('data-tab');
 
             buttons.forEach(btn => {
@@ -269,7 +306,7 @@ function initDashboardTabs() {
     });
 }
 
-/* ===== 6. CERTIFICATE CAROUSEL & LIGHTBOX ===== */
+/* ===== 6. CERTIFICATE CAROUSEL, MOBILE SWIPE & LIGHTBOX ===== */
 function initCertificateSystem() {
     const track = document.getElementById('certificateTrack');
     const prevBtn = document.getElementById('certPrevBtn');
@@ -312,7 +349,7 @@ function initCertificateSystem() {
             <img src="${cert.src}" alt="${cert.title}" loading="lazy">
             <div class="cert-card-overlay">
                 <span class="cert-title-tag">${cert.title}</span>
-                <span class="cert-view-btn"><i class="fas fa-expand-alt"></i> View Fullscreen</span>
+                <span class="cert-view-btn"><i class="fas fa-expand-alt"></i> Tap Fullscreen</span>
             </div>
         `;
 
@@ -327,7 +364,8 @@ function initCertificateSystem() {
             const dot = document.createElement('div');
             dot.className = `dot ${idx === 0 ? 'active' : ''}`;
             dot.addEventListener('click', () => {
-                track.scrollTo({ left: idx * 285, behavior: 'smooth' });
+                const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 20 : 280;
+                track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
                 updateDots(idx);
             });
             dotsContainer.appendChild(dot);
@@ -340,19 +378,30 @@ function initCertificateSystem() {
         dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
     }
 
+    // Scroll listener for dots update
+    track.addEventListener('scroll', () => {
+        const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 20 : 280;
+        const activeIdx = Math.round(track.scrollLeft / cardWidth);
+        updateDots(activeIdx);
+    }, { passive: true });
+
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-            track.scrollBy({ left: -290, behavior: 'smooth' });
+            track.scrollBy({ left: -280, behavior: 'smooth' });
         });
     }
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-            track.scrollBy({ left: 290, behavior: 'smooth' });
+            track.scrollBy({ left: 280, behavior: 'smooth' });
         });
     }
 
+    /* Lightbox Functions */
     function openLightbox(idx) {
+        if (navigator.vibrate) {
+            try { navigator.vibrate(15); } catch (e) {}
+        }
         currentLightboxIndex = idx;
         const cert = certificates[currentLightboxIndex];
         if (!cert) return;
@@ -371,6 +420,9 @@ function initCertificateSystem() {
     }
 
     function navigateLightbox(dir) {
+        if (navigator.vibrate) {
+            try { navigator.vibrate(10); } catch (e) {}
+        }
         currentLightboxIndex = (currentLightboxIndex + dir + certificates.length) % certificates.length;
         const cert = certificates[currentLightboxIndex];
         lightboxImg.src = cert.src;
@@ -382,6 +434,33 @@ function initCertificateSystem() {
     if (lightboxPrev) lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
     if (lightboxNext) lightboxNext.addEventListener('click', () => navigateLightbox(1));
 
+    /* Mobile Swipe Gestures for Lightbox */
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    lightbox.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches[0]) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function (e) {
+        if (!e.changedTouches || !e.changedTouches[0]) return;
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        const diffY = e.changedTouches[0].clientY - touchStartY;
+
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX < 0) {
+                navigateLightbox(1); // Swipe left -> Next
+            } else {
+                navigateLightbox(-1); // Swipe right -> Prev
+            }
+        } else if (diffY > 80) {
+            closeLightbox(); // Swipe down -> Dismiss
+        }
+    }, { passive: true });
+
     document.addEventListener('keydown', function (e) {
         if (!lightbox.classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();
@@ -390,7 +469,7 @@ function initCertificateSystem() {
     });
 }
 
-/* ===== 7. PROJECTS SYSTEM WITH CATEGORIES ['LLMs', 'Computer Vision', 'Robotics', 'Machine Learning', 'Data Science'] ===== */
+/* ===== 7. PROJECTS SYSTEM ===== */
 function initProjectsSystem() {
     const grid = document.getElementById('projectsGrid');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -517,7 +596,7 @@ function initProjectsSystem() {
                     </div>
                     <div class="project-actions">
                         <a href="${project.github}" target="_blank" rel="noopener" class="btn-project btn-project-code">
-                            <i class="fab fa-github"></i> Code Repo
+                            <i class="fab fa-github"></i> GitHub Code
                         </a>
                         <button class="btn-project btn-project-detail" data-id="${project.id}">
                             <i class="fas fa-info-circle"></i> Details
@@ -537,6 +616,9 @@ function initProjectsSystem() {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            if (navigator.vibrate) {
+                try { navigator.vibrate(15); } catch (e) {}
+            }
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             renderProjects(btn.getAttribute('data-filter'));
@@ -545,6 +627,10 @@ function initProjectsSystem() {
 
     function openProjectModal(project) {
         if (!modalBody) return;
+
+        if (navigator.vibrate) {
+            try { navigator.vibrate(15); } catch (e) {}
+        }
 
         modalBody.innerHTML = `
             <img src="${project.image}" alt="${project.title}" class="modal-project-img">
@@ -586,7 +672,7 @@ function initProjectsSystem() {
     renderProjects();
 }
 
-/* ===== 8. CONTACT FORM & COPY TO CLIPBOARD UTILITIES ===== */
+/* ===== 8. CONTACT FORM & COPY UTILITIES ===== */
 function initContactUtilities() {
     const copyBtns = document.querySelectorAll('.copy-btn, #copy-email-quick');
     const contactForm = document.getElementById('contactForm');
@@ -594,6 +680,9 @@ function initContactUtilities() {
 
     copyBtns.forEach(btn => {
         btn.addEventListener('click', function () {
+            if (navigator.vibrate) {
+                try { navigator.vibrate(20); } catch (e) {}
+            }
             const textToCopy = this.getAttribute('data-copy') || 'vsputrayyakola@gmail.com';
             navigator.clipboard.writeText(textToCopy).then(() => {
                 showToast(`Copied to clipboard: ${textToCopy}`);
@@ -607,6 +696,10 @@ function initContactUtilities() {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+            if (navigator.vibrate) {
+                try { navigator.vibrate(25); } catch (e) {}
+            }
+
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
 
@@ -614,7 +707,7 @@ function initContactUtilities() {
             const formData = new FormData(contactForm);
 
             try {
-                const response = await fetch(scriptURL, {
+                await fetch(scriptURL, {
                     method: 'POST',
                     body: formData
                 });
@@ -661,7 +754,7 @@ function initScrollEffects() {
                 entry.target.classList.add('in-view');
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.glass-card, .section-header, .stat-pill').forEach(el => observer.observe(el));
 }
