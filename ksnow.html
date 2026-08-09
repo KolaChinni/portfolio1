@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Venkata Sai Putrayya Kola (KVSP) - AI & Machine Learning Researcher Portfolio. Research papers, LLMs, Computer Vision, Robotics, and Machine Learning implementations.">
-    <meta name="keywords" content="AI Research, Research Papers, Machine Learning, Deep Learning, LLMs, Computer Vision, Robotics, Data Science, Python, KVSP Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Venkata Sai Putrayya Kola (KVSP) - AI & Machine Learning Engineer & Researcher Portfolio. Mobile-optimized interactive showcase of LLMs, Computer Vision, Robotics, and Machine Learning.">
+    <meta name="keywords" content="AI, Machine Learning, Deep Learning, LLMs, Computer Vision, Robotics, Data Science, Python, TensorFlow, PyTorch, KVSP Portfolio">
     <meta name="author" content="Venkata Sai Putrayya Kola">
 
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Venkata Sai Putrayya Kola | AI & ML Research Portfolio">
-    <meta property="og:description" content="Research portfolio of Venkata Sai Putrayya Kola showcasing research publications, LLMs, Computer Vision, and Robotics.">
+    <meta property="og:title" content="Venkata Sai Putrayya Kola | AI & ML Engineer Portfolio">
+    <meta property="og:description" content="Portfolio of Venkata Sai Putrayya Kola featuring LLMs, Computer Vision, Robotics, and Machine Learning implementations.">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -29,7 +29,7 @@
     <!-- Typed.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     
-    <title>Venkata Sai Putrayya Kola | AI & ML Research</title>
+    <title>Venkata Sai Putrayya Kola | AI & ML Portfolio</title>
 </head>
 <body class="dark-theme">
     <!-- Interactive Background Canvas -->
@@ -169,7 +169,7 @@
                 </div>
 
                 <div class="home-image-wrapper">
-                    <div class="image-card tilt-card">
+                    <div class="image-card tilt-card" id="heroProfileCard">
                         <div class="image-frame">
                             <img src="other-images/myimage.jpg" alt="Venkata Sai Putrayya Kola profile photo" class="profile-image">
                             <div class="image-overlay-glow"></div>
@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <!-- Scroll Indicator Cleanly Placed Below Hero Container -->
+            <!-- Scroll Indicator Wrapper -->
             <div class="scroll-indicator-wrapper">
                 <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
                     <div class="mouse"><div class="wheel"></div></div>
@@ -193,7 +193,7 @@
             </div>
         </section>
 
-        <!-- About Section (With explicit Research Papers Count: 3+) -->
+        <!-- About Section -->
         <section id="about" class="section about-section">
             <div class="container">
                 <div class="section-header text-center">
@@ -455,7 +455,7 @@
             </div>
         </section>
 
-        <!-- Certificate Gallery Section -->
+        <!-- Certificate Gallery Section with Mobile Touch Swipe Hint -->
         <section id="certificates" class="section certificates-section">
             <div class="container">
                 <div class="section-header text-center">
@@ -464,7 +464,8 @@
                         <span class="title-text">Certification</span>
                         <span class="title-highlight">Gallery</span>
                     </h2>
-                    <p class="section-subtitle">Click on any certificate to open interactive fullscreen lightbox with zoom</p>
+                    <p class="section-subtitle">Click or tap any certificate to open interactive fullscreen lightbox</p>
+                    <div class="mobile-swipe-hint"><i class="fas fa-hand-pointer"></i> Swipe left or right to browse certificates</div>
                 </div>
 
                 <div class="certificate-wrapper">
@@ -497,14 +498,16 @@
                     <p class="section-subtitle">Explore my projects across LLMs, Computer Vision, Robotics, Machine Learning, and Data Science</p>
                 </div>
 
-                <!-- Filter Controls -->
-                <div class="project-filters" id="project-filters">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="llm"><i class="fas fa-robot"></i> LLMs</button>
-                    <button class="filter-btn" data-filter="cv"><i class="fas fa-eye"></i> Computer Vision</button>
-                    <button class="filter-btn" data-filter="robotics"><i class="fas fa-microchip"></i> Robotics</button>
-                    <button class="filter-btn" data-filter="ml"><i class="fas fa-brain"></i> Machine Learning</button>
-                    <button class="filter-btn" data-filter="ds"><i class="fas fa-chart-bar"></i> Data Science</button>
+                <!-- Filter Controls (Horizontally scrollable with touch snap on mobile) -->
+                <div class="project-filters-wrapper">
+                    <div class="project-filters" id="project-filters">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="llm"><i class="fas fa-robot"></i> LLMs</button>
+                        <button class="filter-btn" data-filter="cv"><i class="fas fa-eye"></i> Computer Vision</button>
+                        <button class="filter-btn" data-filter="robotics"><i class="fas fa-microchip"></i> Robotics</button>
+                        <button class="filter-btn" data-filter="ml"><i class="fas fa-brain"></i> Machine Learning</button>
+                        <button class="filter-btn" data-filter="ds"><i class="fas fa-chart-bar"></i> Data Science</button>
+                    </div>
                 </div>
 
                 <!-- Projects Grid -->
